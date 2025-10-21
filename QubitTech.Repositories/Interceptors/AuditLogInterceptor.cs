@@ -44,7 +44,7 @@ public class AuditLogInterceptor : SaveChangesInterceptor
 
         var auditLogs = new List<AuditLog>();
         var entries = context.ChangeTracker.Entries()
-            .Where(e => e.Entity is not AuditLog && // AuditLog'un kendisini loglama!
+            .Where(e => e.Entity is not AuditLog && 
                        (e.State == EntityState.Added ||
                         e.State == EntityState.Modified ||
                         e.State == EntityState.Deleted))

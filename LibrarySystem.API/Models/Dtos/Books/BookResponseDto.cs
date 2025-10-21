@@ -4,9 +4,6 @@ namespace LibrarySystem.API.Models.Dtos.Books;
 
 public sealed class BookResponseDto
 {
-
-    private string _status;
-    
     public Guid Id { get; set; }
     public string ISBN { get; set; } = string.Empty;
     public string Title { get; set; } = string.Empty;
@@ -20,12 +17,7 @@ public sealed class BookResponseDto
     
     public BookStatus BookStatus { private get; set; }
 
-    public string Status
-    {
-        get=>_status;
-        set => ConvertTextByStatus(BookStatus);
-    }
-
+    public string Status => ConvertTextByStatus(BookStatus);
 
 
     private string ConvertTextByStatus(BookStatus status) => BookStatus switch

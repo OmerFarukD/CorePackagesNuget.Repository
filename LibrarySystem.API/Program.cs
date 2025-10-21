@@ -20,7 +20,7 @@ builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 
 builder.Services.AddQubitRepositories<LibraryDbContext>(opt =>
 {
-    opt.AutoSaveChanges = false;
+    opt.AutoSaveChanges=true;
     opt.EnableSoftDelete = true;
     opt.EnableAuditLogging = false;
 }).ConfigureDbContext((sp,opt)=> opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon")));
